@@ -12,7 +12,7 @@ apache_port ==> Default 80. <br />
 log_format ==> Apache log format. <br />
 
 ftp_user ==> I hope I don't need to explain this. <br />
-ftp_home ==> FTP home. Also vhost DocumentRoot. </br />
+ftp_home ==> FTP home. Also vhost DocumentRoot. <br />
 ftp_password ==> Same as above. <br />
 ftp_shell ==> Pretty clear, default is /bin/false <br />
 
