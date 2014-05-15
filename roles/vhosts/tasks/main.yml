@@ -2,7 +2,7 @@
 - name: Create folder
   shell: mkdir -p {{ ftp_home }}
 
-- name: Create Apache vhost in conf.d folder
+- name: Create Apache vhost for {{ site_url }} in conf.d folder
   template: src=vhost.conf.j2 dest={{ apache_dir }}/{{ site_url }}.conf owner=root
 
 - name: Enable the vhost on Debian family
