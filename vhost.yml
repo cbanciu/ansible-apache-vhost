@@ -1,0 +1,17 @@
+---
+- name: Add an Apache Virtual Host with ftp user and create a MySQL database
+  hosts: all 
+  user: root
+  vars_files:
+    - "group_vars/{{ ansible_os_family }}.yml"
+  #remote_user:  
+  sudo: yes 
+
+- name: Add the Virtual Host and ftp user
+  hosts: web
+  #remote_user: 
+  sudo: yes
+  roles:
+     - vhosts
+     - ftp_user
+     

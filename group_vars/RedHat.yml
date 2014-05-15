@@ -1,0 +1,8 @@
+---
+# RedHat values
+
+apache: httpd
+apache_logs: /var/log/httpd
+apache_dir: /etc/httpd/vhost.d
+apache_group: apache
+

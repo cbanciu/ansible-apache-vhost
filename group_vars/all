@@ -1,0 +1,8 @@
+site_url: 
+apache_port: 80
+log_format: combined
+
+ftp_user: 
+ftp_password: 
+ftp_home: 
+ftp_shell: /bin/false

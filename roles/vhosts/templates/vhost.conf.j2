@@ -1,0 +1,12 @@
+<VirtualHost *:{{ apache_port }}>
+ ServerName {{ site_url }}
+ ServerAlias www.{{ site_url }}
+ DocumentRoot {{ ftp_home }}
+ <Directory {{ ftp_home }}>
+  Options -Indexes +FollowSymLinks -MultiViews
+  AllowOverride All
+ </Directory>
+ ErrorLog {{ apache_logs }}/{{ site_url }}-error_log
+ CustomLog {{ apache_logs }}/{{ site_url }}-access_log {{ log_format }}
+ LogLevel warn
+</VirtualHost>

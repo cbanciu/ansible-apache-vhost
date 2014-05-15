@@ -1,0 +1,13 @@
+---
+- name: Add an ftp user 
+  user: name={{ ftp_user }} createhome=no home={{ ftp_home }} shell={{ ftp_shell }} 
+
+- name: Chown home ownership
+  shell: chown {{ ftp_user}}:{{ apache_group }} {{ ftp_home }}
+
+- name: Setup set user password
+  shell: usermod -p $(echo '{{ item.0 }}' | openssl passwd -1 -stdin) {{ item.1 }}
+  with_together:
+    - "{{ ftp_password }}"
+    - "{{ ftp_user }}"
+
